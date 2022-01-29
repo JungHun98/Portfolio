@@ -1,0 +1,138 @@
+/* Global val */
+:root {
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-samll: 16px;
+  --font-micro: 14px;
+
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+h1 {
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+  color: black;
+  margin: 16px 0px;
+}
+
+h2 {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-semi-bold);
+  color: black;
+  margin: 8px 0px;
+}
+
+h3 {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-semi-bold);
+  color: black;
+  margin: 8px 0px;
+}
+
+p {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-semi-bold);
+  color: black;
+  margin: 4px 0px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+/* menu bar */
+#header {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: green;
+}
+.header__logo {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
+}
+.header__menu {
+  display: flex;
+}
+
+.header__menu__item {
+  padding: 8px 4px;
+  margin: 0 4px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.header__menu__item.select {
+  border: 1px solid white;
+}
+
+.header__menu__item:hover {
+  background-color: yellowgreen;
+}
+
+/* Home */
+
+#home {
+  background: url("/Image/background.png") center/cover no-repeat;
+  width: 100%;
+  height: 500px;
+  text-align: center;
+  padding: 40px;
+  color: white;
+}
+
+.home__thumbnail img {
+  width: 200px;
+  height: 200px;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+.home__title,
+.home__coment,
+.home__contact {
+  color: white;
+}
+
+.home__coment {
+  height: 64px;
+  line-height: 64px;
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+}
+
+.home__contact {
+  border: 2px solid white;
+  border-radius: 4px;
+  font-size: var(--font-regular);
+  font-weight: var(--font-medium);
+  padding: 4px;
+}
+
+.home__contact:hover {
+  background-color: blue;
+  transition: 1s;
+}
