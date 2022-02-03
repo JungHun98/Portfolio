@@ -37,7 +37,7 @@ h1 {
 }
 
 h2 {
-  font-size: var(--font-regular);
+  font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
   color: black;
   margin: 8px 0px;
@@ -265,4 +265,27 @@ button {
 .skillset .percent {
   height: 100%;
   background-color: hotpink;
+}
+
+/* Contact */
+#contact {
+  background-color: rgb(206, 183, 228);
+}
+
+#contact .links {
+  margin-top: 20px;
+}
+
+#contact .links i {
+  font-size: 30px;
+  transition: 300ms;
+}
+#contact .links i:hover {
+  transform: scale(1.1);
+}
+#contact .links .fab:hover {
+  color: purple;
+}
+#contact .links .fas:hover {
+  color: chartreuse;
 }
