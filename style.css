@@ -197,3 +197,72 @@ button {
   font-size: var(--font-micro);
   color: darkgray;
 }
+
+/* Skills */
+
+#skills {
+  background-color: bisque;
+}
+
+.skillset {
+  background-color: white;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  margin-top: 20px;
+}
+.skillset li {
+  margin: 10px 0;
+  padding: 0 20px 0 20px;
+  text-align: left;
+}
+.skillset img {
+  width: 50px;
+}
+
+.skillset i {
+  font-size: 50px;
+  color: #e84d31;
+}
+.skillset .tools_box {
+  width: 100%;
+  height: 50%;
+  padding-top: 10px;
+}
+.skillset .tools_box h2 {
+  margin: 0;
+}
+.skillset__leng {
+  background-color: dimgrey;
+}
+
+.skillset__tools {
+  background-color: gray;
+  width: 100%;
+  height: 100%;
+}
+.skillset__tools ul {
+  display: flex;
+  justify-content: center;
+}
+.skillset__leng,
+.skillset__tools {
+  width: 50%;
+}
+.skillset .tools_box:nth-child(1) {
+  border-bottom: 1px solid black;
+}
+.skillset .tools_box:nth-child(2) {
+  border-top: 1px solid black;
+}
+.skillset .box {
+  width: 100%;
+  height: 3px;
+  margin-top: 5px;
+  background-color: honeydew;
+}
+
+.skillset .percent {
+  height: 100%;
+  background-color: hotpink;
+}
