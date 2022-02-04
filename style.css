@@ -62,21 +62,24 @@ button {
   border: none;
   cursor: pointer;
 }
+
 /* menu bar */
 #header {
-  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  background-color: green;
+  padding: 0 32px;
+  background-color: #1ed7eb;
 }
+
 .header__logo {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
 }
+
 .header__menu {
   display: flex;
+  width: 100%;
 }
 
 .header__menu__item {
@@ -86,14 +89,22 @@ button {
   border-radius: 4px;
 }
 
-.header__menu__item.select {
+/* .header__menu__item.select {
   border: 1px solid white;
-}
+} */
 
 .header__menu__item:hover {
-  background-color: yellowgreen;
+  background-color: #82dae4;
 }
-
+.contact__but {
+  margin-top: 32px;
+}
+.header__toggle {
+  position: absolute;
+  right: 32px;
+  font-size: 32px;
+  display: none;
+}
 /* Home */
 
 #home {
@@ -118,8 +129,6 @@ button {
 }
 
 .home__coment {
-  height: 64px;
-  line-height: 64px;
   font-size: var(--font-regular);
   font-weight: var(--weight-regular);
 }
@@ -156,6 +165,7 @@ button {
 .major {
   text-align: center;
 }
+
 .major__icon {
   display: flex;
   width: 150px;
@@ -207,10 +217,10 @@ button {
 .skillset {
   background-color: white;
   width: 100%;
-  height: 400px;
   display: flex;
   margin-top: 20px;
 }
+
 .skillset li {
   margin: 10px 0;
   padding: 0 20px 0 20px;
@@ -225,36 +235,40 @@ button {
   color: #e84d31;
 }
 .skillset .tools_box {
-  width: 100%;
   height: 50%;
   padding-top: 10px;
 }
+
 .skillset .tools_box h2 {
   margin: 0;
 }
+
 .skillset__leng {
   background-color: dimgrey;
 }
 
 .skillset__tools {
   background-color: gray;
-  width: 100%;
-  height: 100%;
 }
+
 .skillset__tools ul {
   display: flex;
   justify-content: center;
 }
+
 .skillset__leng,
 .skillset__tools {
   width: 50%;
 }
+
 .skillset .tools_box:nth-child(1) {
   border-bottom: 1px solid black;
 }
+
 .skillset .tools_box:nth-child(2) {
   border-top: 1px solid black;
 }
+
 .skillset .box {
   width: 100%;
   height: 3px;
@@ -270,6 +284,9 @@ button {
 /* Contact */
 #contact {
   background-color: rgb(206, 183, 228);
+  text-align: center;
+  padding: 50px;
+  margin-top: 20px;
 }
 
 #contact .links {
@@ -280,12 +297,52 @@ button {
   font-size: 30px;
   transition: 300ms;
 }
+
 #contact .links i:hover {
   transform: scale(1.1);
 }
+
 #contact .links .fab:hover {
   color: purple;
 }
+
 #contact .links .fas:hover {
   color: chartreuse;
+}
+
+@media screen and (max-width: 768px) {
+  .header__toggle {
+    display: block;
+  }
+
+  #header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 17.2px;
+  }
+
+  .header__menubox {
+    width: 100%;
+    text-align: center;
+    display: none;
+  }
+
+  .header__menu {
+    display: inline-block;
+  }
+
+  .about__major {
+    flex-direction: column;
+  }
+  .major {
+    margin: 20px;
+  }
+
+  .skillset {
+    flex-direction: column;
+  }
+  .skillset__leng,
+  .skillset__tools {
+    width: 100%;
+  }
 }
