@@ -74,6 +74,7 @@ button {
   position: fixed;
 
   transition: 300ms linear;
+  z-index: 1;
 }
 
 #header.header--dark {
@@ -132,6 +133,7 @@ button {
   border: 2px solid white;
   border-radius: 50%;
 }
+
 .home__title,
 .home__coment,
 .home__contact {
@@ -356,4 +358,21 @@ button {
   .skillset__tools {
     width: 100%;
   }
+}
+
+/* arrow-up */
+.arrowup {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 300ms;
+}
+.arrowup.visible {
+  pointer-events: auto;
+  opacity: 1;
+}
+.arrowup i {
+  font-size: 30px;
 }

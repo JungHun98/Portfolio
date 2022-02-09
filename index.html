@@ -9,8 +9,7 @@
   <meta name="author" content="JungHun">
   <link rel="icon" type="image/png" href="/Image/logo.png">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-  <script src="main.js" defer></script>
+  <script src="https://kit.fontawesome.com/a5d64982e4.js" crossorigin="anonymous"></script>  
 </head>
 <body>
   <!-- header -->
@@ -36,12 +35,14 @@
 
   <!-- home -->
   <section id = "home">
-    <div class = "home__thumbnail"><img src="/Image/kw logo.jpg" style="width: 200px; height: 200px;"></div>
-    <h1 class = "home__title">안녕하세요~!</h1>
-    
+    <div class = "home__box">
+      <div class = "home__thumbnail"><img src="/Image/kw logo.jpg" style="width: 200px; height: 200px;"></div>
+      <h1 class = "home__title">안녕하세요~!</h1>
       <h2 class = "home__coment">광운대학교 소프트웨어학부 17학번 김정훈입니다.</h2>
-    <div class="contact__but">
-      <button class="home__contact" data-link="#contact">Contact Me</button>
+      
+      <div class="contact__but">
+        <button class="home__contact" data-link="#contact">Contact Me</button>
+      </div>
     </div>
   </section>
 
@@ -166,5 +167,10 @@
     </div>
   </section>
 
+  <button class="arrowup" data-link="#home">
+    <i class="fas fa-user"></i>
+  </button>
 </body>
+<script src="main.js"></script>
+
 </html>
