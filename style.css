@@ -99,12 +99,13 @@ button {
   border-radius: 4px;
 }
 
-.header__menu__item.select {
-  border: 1px solid white;
+.header__menu__item {
+  border: 1px solid transparent;
 }
 
 .header__menu__item:hover {
   background-color: #82dae4;
+  border: 1px solid white;
 }
 .contact__but {
   margin-top: 32px;
@@ -330,14 +331,17 @@ button {
   #header {
     flex-direction: column;
     align-items: flex-start;
-
     padding: 10px;
+    background-color: #94e1e9f3;
   }
 
   .header__menubox {
     width: 100%;
-    text-align: center;
     display: none;
+    text-align: center;
+  }
+  .header__menubox.open {
+    display: block;
   }
 
   .header__menu {
@@ -375,4 +379,8 @@ button {
 }
 .arrowup i {
   font-size: 30px;
+}
+
+.arrowup i:hover {
+  color: blue;
 }

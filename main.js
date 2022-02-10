@@ -3,6 +3,7 @@
 let header = document.querySelector('#header');
 let headerHeight = header.clientHeight;
 let home = document.querySelector('#home');
+
 let homeNote = document.querySelector('.home__box');
 let homeHeight = home.getBoundingClientRect().height;
 
@@ -17,6 +18,7 @@ document.addEventListener('scroll', () => {
   else{
     header.classList.remove('header--dark');
   }
+
   homeNote.style.opacity = 1 - window.scrollY / homeHeight;
 
   if(window.scrollY > headerHeight){
@@ -24,7 +26,6 @@ document.addEventListener('scroll', () => {
   }
   else{
     arrowUp.classList.remove('visible');
-
   }
 });
 
@@ -47,3 +48,9 @@ function scrollIntoView(selector){
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({behavior: 'smooth'});
 }
+
+const headerToggle = document.querySelector('.header__toggle');
+const headerMenu = document.querySelector('.header__menubox');
+headerToggle.addEventListener('click', () => {
+  headerMenu.classList.toggle('open');
+})
