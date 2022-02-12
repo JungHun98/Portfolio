@@ -69,7 +69,7 @@ menuArray.forEach(elem => list.push(elem.dataset.link));
 const option = {
   root: null,
   rootMargin: '0px',
-  threshold: 0.8,
+  threshold: 0.4,
 }
 
 const action = (entries, observer) => {
