@@ -54,3 +54,37 @@ const headerMenu = document.querySelector('.header__menubox');
 headerToggle.addEventListener('click', () => {
   headerMenu.classList.toggle('open');
 })
+
+const sectionIds = [
+  '#home',
+  '#about',
+  '#skills',
+  '#contact'
+];
+const sectionArray = document.querySelectorAll('section');
+
+let list = []
+menuArray.forEach(elem => list.push(elem.dataset.link));
+
+const option = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.8,
+}
+
+const action = (entries, observer) => {
+  entries.forEach(entry => {
+    const idx = sectionIds.indexOf('#' + entry.target.id)
+
+    if(entry.isIntersecting){
+      menuArray[idx].classList.add('active');
+    }
+    else{
+      menuArray[idx].classList.remove('active');
+    }
+  });
+};
+
+const observer = new IntersectionObserver(action, option);
+
+sectionArray.forEach(section => observer.observe(section));
