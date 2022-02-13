@@ -29,6 +29,7 @@ document.addEventListener('scroll', () => {
   }
 });
 
+console.log(window.scrollY + window.innerHeight);
 // header, contact click시 스크롤 이동
 document.addEventListener('click', (event) => {
   let moveId = event.target.dataset.link;
@@ -61,6 +62,8 @@ const sectionIds = [
   '#skills',
   '#contact'
 ];
+
+// Scroll시 현제 섹션 표시
 const sectionArray = document.querySelectorAll('section');
 
 let list = []
@@ -69,18 +72,30 @@ menuArray.forEach(elem => list.push(elem.dataset.link));
 const option = {
   root: null,
   rootMargin: '0px',
-  threshold: 0.4,
+  threshold: 0.5,
+}
+
+let selectedMenuIdx;
+let selectedMenu = menuArray[0];
+
+function selecteMenu(index){
+  selectedMenu.classList.remove('active');
+  selectedMenu = menuArray[index];
+  selectedMenu.classList.add('active');
 }
 
 const action = (entries, observer) => {
   entries.forEach(entry => {
-    const idx = sectionIds.indexOf('#' + entry.target.id)
 
-    if(entry.isIntersecting){
-      menuArray[idx].classList.add('active');
-    }
-    else{
-      menuArray[idx].classList.remove('active');
+    if(!entry.isIntersecting && entry.intersectionRatio > 0){
+      const idx = sectionIds.indexOf('#' + entry.target.id);
+
+      if(entry.boundingClientRect.y < 0){
+        selectedMenuIdx = idx + 1;
+      }
+      else{
+        selectedMenuIdx = idx - 1;
+      }
     }
   });
 };
@@ -88,3 +103,13 @@ const action = (entries, observer) => {
 const observer = new IntersectionObserver(action, option);
 
 sectionArray.forEach(section => observer.observe(section));
+
+window.addEventListener('scroll', () => {
+  if(window.scrollY === 0){
+    selectedMenuIdx = 0;
+  }
+  else if(Math.floor(window.scrollY + window.innerHeight) === document.body.clientHeight){
+    selectedMenuIdx = menuArray.length - 1;
+  }
+  selecteMenu(selectedMenuIdx);
+})
