@@ -4,8 +4,7 @@ let header = document.querySelector('#header');
 let headerHeight = header.clientHeight;
 let home = document.querySelector('#home');
 
-let homeNote = document.querySelector('.home__box');
-let homeHeight = home.getBoundingClientRect().height;
+
 
 let menuArray = document.querySelectorAll('.header__menu__item');
 let arrowUp = document.querySelector('.arrowup');
@@ -18,7 +17,12 @@ document.addEventListener('scroll', () => {
   else{
     header.classList.remove('header--dark');
   }
+});
 
+//하단 스크롤시 home의 내용들이 점점 투명해짐 
+let homeNote = document.querySelector('.home__box');
+let homeHeight = home.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
   homeNote.style.opacity = 1 - window.scrollY / homeHeight;
 
   if(window.scrollY > headerHeight){
@@ -29,8 +33,7 @@ document.addEventListener('scroll', () => {
   }
 });
 
-console.log(window.scrollY + window.innerHeight);
-// header, contact click시 스크롤 이동
+// header menu, contact click시 스크롤 이동
 document.addEventListener('click', (event) => {
   let moveId = event.target.dataset.link;
   if(moveId == null){
@@ -41,6 +44,7 @@ document.addEventListener('click', (event) => {
   }
 })
 
+// arrow up click시 스크롤 이동
 arrowUp.addEventListener('click', () => {
   scrollIntoView('#home');
 })
@@ -78,12 +82,14 @@ const option = {
 let selectedMenuIdx;
 let selectedMenu = menuArray[0];
 
+//css를 현재 해당하는 섹션에 부여하는 함수
 function selecteMenu(index){
   selectedMenu.classList.remove('active');
   selectedMenu = menuArray[index];
   selectedMenu.classList.add('active');
 }
 
+//현재 보여지고 있는 섹션을 판단하는 함수
 const action = (entries, observer) => {
   entries.forEach(entry => {
 
@@ -104,6 +110,7 @@ const observer = new IntersectionObserver(action, option);
 
 sectionArray.forEach(section => observer.observe(section));
 
+//스크롤시 현재 섹션을 header menu에 적용시키는 이벤트리스너
 window.addEventListener('scroll', () => {
   if(window.scrollY === 0){
     selectedMenuIdx = 0;
