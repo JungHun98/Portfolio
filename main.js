@@ -1,13 +1,11 @@
 'use strict';
 
-let header = document.querySelector('#header');
-let headerHeight = header.clientHeight;
-let home = document.querySelector('#home');
+const header = document.querySelector('#header');
+const headerHeight = header.clientHeight;
+const home = document.querySelector('#home');
 
-
-
-let menuArray = document.querySelectorAll('.header__menu__item');
-let arrowUp = document.querySelector('.arrowup');
+const menuArray = document.querySelectorAll('.header__menu__item');
+const arrowUp = document.querySelector('.arrowup');
 
 //스크롤 시 header의 backgound의 색이 진해짐 
 document.addEventListener('scroll', () => {
@@ -20,8 +18,8 @@ document.addEventListener('scroll', () => {
 });
 
 //하단 스크롤시 home의 내용들이 점점 투명해짐 
-let homeNote = document.querySelector('.home__box');
-let homeHeight = home.getBoundingClientRect().height;
+const homeNote = document.querySelector('.home__box');
+const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
   homeNote.style.opacity = 1 - window.scrollY / homeHeight;
 
