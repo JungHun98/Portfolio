@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="kor">
+<html lang="ko">
+  <!-- 
+    검사기를 돌려보니 "kor"은 표준이 아니라고 한다.
+    lang 속성에 명시된 값을 통해 스크린 리더가 언어를 인식한다.
+  자동으로 음성을 변환하거나, 해당 언어의 적합한 발음을 제공할 수 있도록한다. -->
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +19,9 @@
   <!-- header -->
   <nav id = "header">
     <div class= "header__logo">
-        <img src="./Image/logo.png" style="width:30px; height:30px">
+        <img src="./Image/logo.png" style="width:2rem; height:2rem" alt="logo">
+        <!-- 웹 표준에 따르면 img 태그에는 alt속성을 필히 넣어주어야 한다. -->
+        <!-- 그리고 이미지의 크기를 절대적인 px값으로 넣지 말라고 한다. 반응형 웹을 구성할 때 힘들다고 한다. -->
         <a href="#">My Page</a>
     </div>
 
@@ -26,7 +32,6 @@
         <li class = "header__menu__item" data-link="#skills">Skills</li>
         <li class = "header__menu__item" data-link="#work">My work</li>
         <li class = "header__menu__item" data-link="#contact">Contact</li>
-        <li><a href="/comunity.html">link</a></li>
       </ul>
     </div>
 
@@ -38,7 +43,7 @@
   <!-- home -->
   <section id = "home">
     <div class = "home__box">
-      <div class = "home__thumbnail"><img src="./Image/kwlogo.jpg" style="width: 200px; height: 200px;"></div>
+      <div class = "home__thumbnail"><img src="./Image/kwlogo.jpg" style="width: 13rem; height: 13rem;" alt="kwu-logo"></div>
       <h1 class = "home__title">안녕하세요!!</h1>
       <h2 class = "home__coment">광운대학교 소프트웨어학부 17학번 김정훈입니다.</h2>
       
@@ -73,8 +78,8 @@
       
     <div class = "about__career">
       <div class = "career__img">
-        <img src="./Image/kwlogo.jpg">
-      </div>
+        <img src="./Image/kwlogo.jpg" alt="kwu-logo">
+      </div>  
       <div class = "career_box">
         <div class = "career__name">kwangwoon university</div>
         <div class = "career__time">March 2017 ~ ing</div>
@@ -97,7 +102,7 @@
         <h2>Languege</h2>
         <ul class = "leng">
           <li class = "leng__item">
-            <img src = "./Image/python.png">
+            <img src = "./Image/python.png" alt="python">
             10%
             <div class = "box">
               <div class = "percent" style="width: 10%;"></div>
@@ -105,21 +110,21 @@
             
           </li>
           <li class = "leng__item">
-            <img src = "./Image/html.png">
+            <img src = "./Image/html.png" alt="html">
             50%
             <div class = "box">
               <div class = "percent" style="width: 50%;"></div>
             </div>
           </li>
           <li class = "leng__item">
-            <img src = "./Image/css_preview_rev_1.png">
+            <img src = "./Image/css_preview_rev_1.png" alt="css">
             20%
             <div class = "box">
               <div class = "percent" style="width: 20%;"></div>
             </div>
           </li>
           <li class = "leng__item">
-            <img src = "./Image/js.png">
+            <img src = "./Image/js.png" alt="js">
             10%
             <div class = "box">
               <div class = "percent" style="width: 10%;"></div>
@@ -134,10 +139,10 @@
           
           <ul class = "tools">
             <li class = "tools__item">
-              <img src="./Image/vscode.png">
+              <img src="./Image/vscode.png" alt="visual studio code">
             </li>
             <li class = "tools__item">
-              <img src="./Image/vs.png">
+              <img src="./Image/vs.png" alt="visual studio">
             </li>
           </ul>
         </div>
@@ -173,7 +178,7 @@
   <!-- contact -->
   <section id = "contact">
     <h2 class = "title">Let's Talk!</h2>
-    <h3 class = "email">j7papa@naver.com</div>
+    <h3 class = "email">j7papa@naver.com</h3>
     <div class = "links">
       <a href = "https://github.com/JungHun98" class = "links__github">
         <i class="fab fa-github"></i>

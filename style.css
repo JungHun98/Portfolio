@@ -71,7 +71,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10 32px;
+  padding: 10px 32px;
   background-color: transparent;
   position: fixed;
 
@@ -413,6 +413,7 @@ button {
   pointer-events: auto;
   opacity: 1;
 }
+
 .arrowup i {
   font-size: 30px;
 }
